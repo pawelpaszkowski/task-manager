@@ -8,11 +8,11 @@
     <ul>
         @for (task of selectedUserTasks; track task.id) {
           <li>
-            <app-task [task]="task" (complete)="onCompleteTask($event)"></app-task>
+            <app-task [task]="task"></app-task>
           </li>
         }
     </ul>
 </section>
 @if(showAddTask) {
-  <app-add-task (close)="onCloseAddTask($event)"></app-add-task>
+  <app-add-task [userId]="userId" (close)="onCloseAddTask($event)"></app-add-task>
 }
